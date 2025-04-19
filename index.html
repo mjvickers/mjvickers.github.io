@@ -19,6 +19,14 @@
       justify-content: center;
       align-items: center;
     }
+    .headshot {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #00ffff;
+    }
     h1 {
       font-size: 3rem;
       text-align: center;
@@ -41,6 +49,7 @@
   </style>
 </head>
 <body>
+  <img src="headshot.jpg" alt="Michael Vickers Headshot" class="headshot">
   <h1>Michael Vickers</h1>
   <div class="subtitle">
     is...<span class="role" id="role">a Data Analyst</span>
@@ -65,19 +74,16 @@
       "a Problem-Solver",
       "a Storyteller"
     ];
-    
+
     let index = 0;
     const roleElement = document.getElementById("role");
 
     setInterval(() => {
-      // Start fade-out
       roleElement.classList.add("fade-out");
-
-      // Wait for fade-out to finish before changing text
       setTimeout(() => {
         index = (index + 1) % roles.length;
         roleElement.textContent = roles[index];
-        roleElement.classList.remove("fade-out"); // Fade back in
+        roleElement.classList.remove("fade-out");
       }, 500);
     }, 3000);
   </script>
