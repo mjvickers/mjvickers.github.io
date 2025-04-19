@@ -21,7 +21,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 60px; /* Vertical spacing from top */
+      padding-top: 60px;
       padding-bottom: 40px;
     }
 
@@ -99,7 +99,7 @@
     }
 
     .about-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #00ffff;
       text-align: left;
       margin-bottom: 30px;
@@ -107,15 +107,19 @@
 
     .about-text p {
       margin-bottom: 1.5rem;
-      text-indent: 2em;
       line-height: 1.8;
       font-size: 1.1rem;
+      text-indent: 2em;
+    }
+
+    /* No indent on intro paragraphs */
+    .about-text p.intro {
+      text-indent: 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- About Me Jump Button -->
   <button class="about-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">About Me</button>
 
   <div class="container">
@@ -134,13 +138,14 @@
     </div>
   </div>
 
-  <!-- About Me Section -->
   <section id="about" class="about-section">
     <h2 class="about-title">About Me</h2>
     <div class="about-text">
-      <p>Hello,</p>
+      <p class="intro">Hello,</p>
 
-      <p>My name is Michael Vickers, and I wanted to start by saying thank you for taking the time to check out my portfolio! It means a lot!</p>
+      <p class="intro">My name is Michael Vickers, and I wanted to start by saying thank you for taking the time to check out my portfolio! It means a lot!</p>
+
+      <p class="intro">Here’s a little bit about me…</p>
 
       <p>I’m currently 24 years old and based in San Francisco, California. I obtained my undergraduate degree from Cal Poly Pomona (CPP) in May 2023, where I studied Computer Information Systems with an emphasis in Business Intelligence. I was drawn to that discipline because I wanted to graduate as a versatile, ready, professional! My curriculum consisted of several business-centric concepts (i.e., Finance, Real Estate, Accounting, and Marketing) and technical courses where I learned valuable languages such as SQL and Python.</p>
 
@@ -191,3 +196,4 @@
   </script>
 </body>
 </html>
+
