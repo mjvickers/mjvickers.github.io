@@ -15,17 +15,56 @@
       font-family: Arial, sans-serif;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
     h1 {
       font-size: 3rem;
       text-align: center;
+      margin-bottom: 20px;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .role {
+      font-style: italic;
+      color: #00ffff;
+      margin-left: 0.4rem;
     }
   </style>
 </head>
 <body>
   <h1>Michael Vickers</h1>
+  <div class="subtitle">
+    is<span class="role" id="role">a Data Analyst</span>
+  </div>
+
+  <script>
+    const roles = [
+      "a Data Analyst",
+      "an Adventurer",
+      "an Associate Account Manager",
+      "a Runner",
+      "a Designer",
+      "a Programmer",
+      "a Hiker",
+      "a Life-Long Learner",
+      "Curious",
+      "a Friend",
+      "a Cat dad",
+      "a Tyler, the Creator Fan",
+      "a Nature Photographer",
+      "a Backpacker"
+    ];
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % roles.length;
+      document.getElementById("role").textContent = roles[index];
+    }, 3000);
+  </script>
 </body>
 </html>
 
