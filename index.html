@@ -75,9 +75,16 @@
       color: #ffffff;
     }
 
-    .about-button, .projects-button {
+    .button-container {
       position: absolute;
       top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .about-button,
+    .projects-button {
       background-color: #00ffff;
       color: #000000;
       padding: 10px 15px;
@@ -88,62 +95,66 @@
       transition: background-color 0.3s;
     }
 
-    .about-button {
-      right: 120px;
-    }
-
-    .projects-button {
-      right: 20px;
-    }
-
     .about-button:hover,
     .projects-button:hover {
       background-color: #00cccc;
     }
 
-    .about-section, .projects-section {
+    .about-section,
+    .projects-section {
       width: 100%;
       padding: 60px 40px;
     }
 
-    .about-title, .projects-title {
-      font-size: 1.8rem;
+    .about-title,
+    .projects-title {
+      font-size: 2rem;
       color: #00ffff;
       text-align: left;
       margin-bottom: 30px;
     }
 
-    .about-text p, .projects-text p {
+    .about-text p,
+    .projects-text p {
       margin-bottom: 1.5rem;
       line-height: 1.8;
       font-size: 1.1rem;
       text-indent: 2em;
     }
 
-    .about-text p.intro, .projects-text p.intro {
+    .about-text p.intro {
+      text-indent: 0;
+    }
+
+    .projects-text p {
       text-indent: 0;
     }
 
     .project-links {
-      font-style: italic;
       margin-bottom: 0.5rem;
+    }
+
+    .project-links em {
+      font-style: italic;
     }
 
     .project-links a {
       color: #00ffff;
       text-decoration: none;
-      margin-right: 15px;
+      margin-left: 10px;
     }
 
     .project-links a:hover {
-      color: #ffffff;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <button class="about-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">About Me</button>
-  <button class="projects-button" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">Projects</button>
+  <div class="button-container">
+    <button class="about-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">About Me</button>
+    <button class="projects-button" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">Projects</button>
+  </div>
 
   <div class="container">
     <img src="headshot.jpg" alt="Michael Vickers Headshot" class="headshot">
@@ -161,23 +172,36 @@
     </div>
   </div>
 
+  <!-- About Me Section -->
   <section id="about" class="about-section">
     <h2 class="about-title">About Me</h2>
     <div class="about-text">
       <p class="intro">Hello,</p>
       <p class="intro">My name is Michael Vickers, and I wanted to start by saying thank you for taking the time to check out my portfolio! It means a lot!</p>
       <p class="intro">Here’s a little bit about me…</p>
-      <!-- (rest of about me section remains unchanged) -->
+
+      <p>I’m currently 24 years old and based in San Francisco, California. I obtained my undergraduate degree from Cal Poly Pomona (CPP) in May 2023, where I studied Computer Information Systems with an emphasis in Business Intelligence. I was drawn to that discipline because I wanted to graduate as a versatile, ready, professional! My curriculum consisted of several business-centric concepts (i.e., Finance, Real Estate, Accounting, and Marketing) and technical courses where I learned valuable languages such as SQL and Python.</p>
+
+      <p>While attending CPP, I spent all 4 years working on the Annual Fund team. I started as a Student Fundraiser, where I cold-called alumni to build affinity with the university and raise donations. By the end of my tenure, I was the Engagement Center Coordinator, where it was my duty to build the Student Fundraiser team and manage our call center. Seeing firsthand how donations support students made me very passionate about philanthropy! It’s not only about being successful in your own right, it’s about paying it forward! Everyone should have an opportunity to pursue/chase their dreams regardless of their financial situation. I’m very proud to come from an institution that values this, and I will continue to support my alma mater!</p>
+
+      <p>Since graduating, I’ve spent the 2 years working at a couple of large insurance brokerages (AJG/Acrisure) as a Client Service Associate II/Associate Account Manager. Serving as an intermediary between large construction businesses and insurance carriers has taught me a lot! Specifically, the importance of managing and maintaining relationships. This is accomplished by transparent communication, setting realistic expectations, providing high-quality service, and delivering results. Clients don’t want a salesman, they want a partner willing to go to war for their business!</p>
+
+      <p>Enough of the professional talk, let me tell you more about myself! Outside of work, I live a fairly active lifestyle. A combination of running, strength training, sports, and hiking has me working out 5-6 times a week. I’m at my best when I’m staying physically active and feeling healthy! When I’m not doing something outside, you can find me locked into coding bootcamps, playing Mario Kart, taking photos, reading <em>Invincible</em>, or spending time with my cat, Momo.</p>
+
+      <p>Finally, what are my goals, and where do I see myself in five years?... The golden questions. To be completely honest, I don’t know. I’m passionate about several things and knowledgeable in a lot of areas. I’m incredibly versatile and a quick learner, but I’m still figuring out this weird, crazy, unpredictable thing called life. I’m taking everything one step at a time, but I want to surround myself with supportive, creative, equally motivated individuals who will push me to be the best version of myself! One thing I don’t want to stop doing is learning.</p>
+
+      <p>If you’re interested in connecting or chatting, please reach out! I’m open to mentorship, new connections, and friends!</p>
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="projects-section">
     <h2 class="projects-title">Projects</h2>
     <div class="projects-text">
       <div class="project">
         <p class="project-links">
-          <em>Bracketology</em> – 
-          <a href="https://docs.google.com/document/d/1E2oUcpr6eU3o9G9jTZNTQdp9DPgP3WD62WNkZluolsY/edit?usp=sharing" target="_blank">Report</a> – 
+          <em>Bracketology</em> —
+          <a href="https://docs.google.com/document/d/1E2oUcpr6eU3o9G9jTZNTQdp9DPgP3WD62WNkZluolsY/edit?usp=sharing" target="_blank">Report</a> —
           <a href="https://public.tableau.com/app/profile/michael.vickers5734/viz/shared/Q8JDWBBY9" target="_blank">Dashboard</a>
         </p>
         <p>
@@ -225,3 +249,4 @@
   </script>
 </body>
 </html>
+
