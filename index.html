@@ -32,6 +32,11 @@
       font-style: italic;
       color: #00ffff;
       margin-left: 0.4rem;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .fade-out {
+      opacity: 0;
     }
   </style>
 </head>
@@ -58,13 +63,21 @@
       "a Nature Photographer",
       "a Backpacker"
     ];
+    
     let index = 0;
+    const roleElement = document.getElementById("role");
 
     setInterval(() => {
-      index = (index + 1) % roles.length;
-      document.getElementById("role").textContent = roles[index];
+      // Start fade-out
+      roleElement.classList.add("fade-out");
+
+      // Wait for fade-out to finish before changing text
+      setTimeout(() => {
+        index = (index + 1) % roles.length;
+        roleElement.textContent = roles[index];
+        roleElement.classList.remove("fade-out"); // Fade back in
+      }, 500);
     }, 3000);
   </script>
 </body>
 </html>
-
