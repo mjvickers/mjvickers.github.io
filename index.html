@@ -168,6 +168,50 @@
     .projects-text .project-description {
   text-indent: 2em;
     }
+
+    .photography-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  color: #00ffff;
+}
+
   </style>
 </head>
 <body>
@@ -282,6 +326,42 @@
     </p>
   </div>
 </section>
+
+<section id="photography" class="photography-section">
+  <h2 class="photography-title">Photography Portfolio</h2>
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="images/Photo 1-min.JPG" alt="Photo 1" />
+    </div>
+    <div class="slide fade">
+      <img src="images/Photo 2-min.JPG" alt="Photo 2" />
+    </div>
+    <!-- Add more <div class="slide"> elements for each photo -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+</section>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+</script>
+
 
   <script>
     const roles = [
